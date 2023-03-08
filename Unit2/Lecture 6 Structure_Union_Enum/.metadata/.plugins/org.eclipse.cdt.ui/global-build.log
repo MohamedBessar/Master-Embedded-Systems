@@ -1,5 +1,4 @@
-14:47:53 **** Incremental Build of configuration Debug for project EX3 ****
+15:22:32 **** Incremental Build of configuration Debug for project EX4 ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
-gcc -o EX3.exe main.o 
-Info: Nothing to build for EX3
+gcc -o EX4.exe main.o 
