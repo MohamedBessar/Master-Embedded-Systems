@@ -1,0 +1,5 @@
+14:33:03 **** Incremental Build of configuration Debug for project EX2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o EX2.exe main.o 
+Info: Nothing to build for EX2
