@@ -1,4 +1,5 @@
-15:22:32 **** Incremental Build of configuration Debug for project EX4 ****
+00:23:45 **** Incremental Build of configuration Debug for project Embeddedc ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
-gcc -o EX4.exe main.o 
+gcc -o Embeddedc.exe pointer.o 
+Info: Nothing to build for Embeddedc
+Info: Nothing to build for Embeddedc
