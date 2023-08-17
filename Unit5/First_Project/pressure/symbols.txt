@@ -1,0 +1,100 @@
+arm-none-eabi-nm.exe driver.o
+00000000 T Delay
+00000074 T getPressureVal
+0000008c T GPIO_Init
+00000024 T set_Alarm_Acuator
+
+ #########################################
+
+$ arm-none-eabi-nm.exe app.o
+00000004 C app_pointer
+00000001 C app_state_id
+         U getPressureVal
+00000004 C Pval
+00000078 T set_PressureVal
+0000004c T ST_app_alarm_on
+00000000 T ST_pressure_detect
+         U start_alarm
+
+#############################################
+
+$ arm-none-eabi-nm.exe pressure_sensor.o
+00000004 C app_pointer
+00000001 C app_state_id
+         U Delay
+00000001 C sens_state_id
+00000004 C sensor_pointer
+         U set_PressureVal
+00000000 T ST_sens_Init
+0000002c T ST_sens_Reading
+
+###############################################
+
+$ arm-none-eabi-nm.exe alarm_actuator.o
+00000004 C alarm_pointer
+00000001 C alarm_state_id
+         U Delay
+         U set_Alarm_Acuator
+00000000 T ST_alarm_Init
+00000098 T ST_alarm_Off
+0000002c T ST_alarm_On
+0000006c T ST_alarm_Waiting
+000000b8 T start_alarm
+
+################################################
+
+$ arm-none-eabi-nm.exe main.o
+00000004 C alarm_pointer
+00000001 C alarm_state_id
+00000004 C app_pointer
+00000001 C app_state_id
+         U GPIO_Init
+00000000 T main
+00000001 C sens_state_id
+00000004 C sensor_pointer
+00000030 T setup
+         U ST_alarm_Off
+         U ST_pressure_detect
+         U ST_sens_Init
+
+
+#################################################
+
+$ arm-none-eabi-nm.exe Pressure_Controller_Alarm.elf
+20000000 B _E_bss
+20000000 T _E_data
+08000414 T _E_text
+20000000 B _s_bss
+20000000 T _s_data
+20001000 B alarm_pointer
+20001004 B alarm_state_id
+20001010 B app_pointer
+2000100c B app_state_id
+0800035c W BusFault_Handler
+0800035c T Default_Handler
+08000180 T Delay
+080001f4 T getPressureVal
+0800020c T GPIO_Init
+0800035c W HardFault_Handler
+0800028c T main
+0800035c W MemManage_Handler
+0800035c W NMI_Handler
+20001008 B Pval
+08000368 T Rest_Handler
+20001018 B sens_state_id
+20001014 B sensor_pointer
+080001a4 T set_Alarm_Acuator
+08000168 T set_PressureVal
+080002bc T setup
+0800001c T ST_alarm_Init
+080000b4 T ST_alarm_Off
+08000048 T ST_alarm_On
+08000088 T ST_alarm_Waiting
+0800013c T ST_app_alarm_on
+080000f0 T ST_pressure_detect
+080002fc T ST_sens_Init
+08000328 T ST_sens_Reading
+20001000 B stack_top
+080000d4 T start_alarm
+0800035c W UsageFault_Handler
+08000000 T Vectors
